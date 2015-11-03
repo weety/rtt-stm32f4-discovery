@@ -69,10 +69,13 @@
 /* Using GPIO pin framework */
 #define RT_USING_PIN
 
-#define RT_USING_I2C
-
 /* Using Hardware Timer framework */
 //#define RT_USING_HWTIMER
+
+#define RT_USING_I2C
+
+#define RT_USING_SENSOR
+#define SENSOR_USING_MPU6050
 
 /* SECTION: Console options */
 #define RT_USING_CONSOLE
@@ -85,13 +88,25 @@
 #define FINSH_USING_SYMTAB
 #define FINSH_USING_DESCRIPTION
 
+/* SECTION: the runtime libc library */
+/* the runtime libc library */
+#define RT_USING_LIBC
+/* #define RT_USING_PTHREADS */
+
+/* SECTION: C++ support */
+/* Using C++ support */
+#define RT_USING_CPLUSPLUS
+
+
 /* SECTION: device filesystem */
 /* Using Device file system */
-/* #define RT_USING_DFS */
+#define RT_USING_DFS
 /* the max number of mounted filesystem */
 #define DFS_FILESYSTEMS_MAX			2
 /* the max number of opened files 		*/
 #define DFS_FD_MAX					4
+
+#define RT_USING_DFS_DEVFS
 
 /* Using ELM FATFS */
 //#define RT_USING_DFS_ELMFAT

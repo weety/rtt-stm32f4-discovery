@@ -35,6 +35,30 @@ void rt_init_thread_entry(void* parameter)
     gdb_start();
 #endif
 
+/* Filesystem Initialization */
+#ifdef RT_USING_DFS
+		/* init the device filesystem */
+		dfs_init();
+
+#if defined(RT_USING_DFS_DEVFS)
+		devfs_init();
+		if (dfs_mount(RT_NULL, "/dev", "devfs", 0, 0) == 0)
+			rt_kprintf("Device File System initialized!\n");
+		else
+			rt_kprintf("Device File System initialzation failed!\n");
+
+		#ifdef RT_USING_NEWLIB
+		/* init libc */
+		libc_system_init(CONSOLE_DEVICE);
+		#endif
+
+		#ifdef RT_USING_CPLUSPLUS
+		/* init cplusplus */
+		cplusplus_system_init();
+		#endif
+#endif
+#endif
+
 #ifdef RT_USING_I2C
     rt_hw_i2c_init();
 #endif
