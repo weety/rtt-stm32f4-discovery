@@ -35,6 +35,10 @@ void rt_init_thread_entry(void* parameter)
     gdb_start();
 #endif
 
+#ifdef RT_USING_I2C
+    rt_hw_i2c_init();
+#endif
+
     /* LwIP Initialization */
 #ifdef RT_USING_LWIP
     {

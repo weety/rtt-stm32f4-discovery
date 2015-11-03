@@ -69,6 +69,8 @@
 /* Using GPIO pin framework */
 #define RT_USING_PIN
 
+#define RT_USING_I2C
+
 /* Using Hardware Timer framework */
 //#define RT_USING_HWTIMER
 
