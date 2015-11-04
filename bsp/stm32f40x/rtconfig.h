@@ -73,6 +73,7 @@
 //#define RT_USING_HWTIMER
 
 #define RT_USING_I2C
+#define RT_USING_I2C_BITOPS
 
 #define RT_USING_SENSOR
 #define SENSOR_USING_MPU6050
