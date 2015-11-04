@@ -213,6 +213,8 @@ MPU6050_Accelerometer::configure(SensorConfig *config)
 	value |= range;
 	write_reg(MPU6050_ACCEL_CONFIG, value);
 
+	this->config = *config;
+
     return 0;
 }
 
@@ -375,6 +377,8 @@ MPU6050_Gyroscope::configure(SensorConfig *config)
 	value &= ~(0x3 << 2);
 	value |= range;
 	write_reg(MPU6050_GYRO_CONFIG, value);
+
+	this->config = *config;
 
     return 0;
 }

@@ -382,7 +382,7 @@
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc> --keep *.o(FSymTab) --keep *.o(VSymTab) </Misc>
+            <Misc>--keep *.o(FSymTab) --keep *.o(VSymTab)</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>

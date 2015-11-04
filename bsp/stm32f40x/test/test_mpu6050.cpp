@@ -5,8 +5,12 @@
 int test_mpu6050(int s)
 {
 	sensors_event_t event;
+	SensorConfig acc_config = {SENSOR_MODE_NORMAL, SENSOR_DATARATE_400HZ, SENSOR_ACCEL_RANGE_2G};;
+	SensorConfig gyro_config = {SENSOR_MODE_NORMAL, SENSOR_DATARATE_400HZ, SENSOR_GYRO_SENSITIVITY_250DPS};;
 	MPU6050_Accelerometer acc("i2c1", MPU6050_ADDRESS_AD0_LOW);
 	MPU6050_Gyroscope gyro("i2c1", MPU6050_ADDRESS_AD0_LOW);
+	acc.configure(&acc_config);
+	gyro.configure(&gyro_config);
 	acc.activate(RT_TRUE);
 	gyro.activate(RT_TRUE);
 	while (s-- > 0)
