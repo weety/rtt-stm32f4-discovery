@@ -138,6 +138,7 @@ MPU6050_Accelerometer::MPU6050_Accelerometer(const char* iic_name, int addr)
 
 	/* initialize MPU6050 */
     write_reg(MPU6050_PWR_MGMT_1,   0x80);			/* reset mpu6050 device 									*/
+	rt_thread_delay(20);
 	write_reg(MPU6050_SMPLRT_DIV,   0x00);			/* Sample Rate = Gyroscope Output Rate / (1 + SMPLRT_DIV) 	*/
     write_reg(MPU6050_PWR_MGMT_1,   0x03);			/* Wake up device , set device clock Z axis gyroscope		*/
 	write_reg(MPU6050_CONFIG,   	0x03);			/* set DLPF_CFG 42Hz										*/
