@@ -47,7 +47,7 @@ void rt_init_thread_entry(void* parameter)
 		else
 			rt_kprintf("Device File System initialzation failed!\n");
 
-		#ifdef RT_USING_NEWLIB
+		#ifdef RT_USING_NEWLIB 
 		/* init libc */
 		libc_system_init(CONSOLE_DEVICE);
 		#endif
